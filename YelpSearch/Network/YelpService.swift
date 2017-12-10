@@ -48,7 +48,7 @@ extension YelpService: TargetType {
     var headers: [String: String]? {
         return [
             "Content-type": "application/json",
-            "Authorization": "Bearer FJ8oXQTp02K_vHhMszNpC7t8PGJrWICp0WvUDReh2HY63bdGxGw7UNHFw99YgeyXdeMc6NawaUnYpxiQ6wgei1VpbEqLGjyyNdPP"
+            "Authorization": "Bearer tUoI6vQL1dM7nMACxEykVMtslEyrSVgUAt8XldltcK7SWnVi46DlbcNRz4Gbu1KOSLceeWzfZjkGExE4bnd7vMlnZo9FnjKDMGBTzOLnhX2E01vqJ-XiyCGktKYsWnYx"
         ]
     }
 }

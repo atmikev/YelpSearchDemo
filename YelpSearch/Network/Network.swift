@@ -15,9 +15,9 @@ struct Network {
     static func request(target: YelpService,
                         success successCallback: @escaping (JSON) -> Void,
                         error errorCallback: @escaping (Error) -> Void,
-                        failure failureCallback: @escaping (MoyaError) -> Void) {
+                        failure failureCallback: @escaping (MoyaError) -> Void) -> Cancellable {
 
-        provider.request(target) { result in
+        return provider.request(target) { result in
             switch result {
             case let .success(response):
                 do {

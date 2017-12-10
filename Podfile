@@ -8,6 +8,8 @@ target 'YelpSearch' do
   # Pods for YelpSearch
   pod 'SwiftyJSON', '~>4.0'
   pod 'Moya', '~>9.0'
+  pod 'MBProgressHUD' , '~>1.1.0'
+  pod 'Kingfisher', '~>4.0'
   
   target 'YelpSearchTests' do
     inherit! :search_paths

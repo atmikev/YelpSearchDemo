@@ -16,7 +16,6 @@
 		C3BD676F1FDCA51B00C34072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3BD676D1FDCA51B00C34072 /* LaunchScreen.storyboard */; };
 		C3BD677A1FDCA51B00C34072 /* YelpSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67791FDCA51B00C34072 /* YelpSearchTests.swift */; };
 		C3BD67851FDCA51B00C34072 /* YelpSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67841FDCA51B00C34072 /* YelpSearchUITests.swift */; };
-		C3BD67981FDCAE2C00C34072 /* ResultEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67971FDCAE2C00C34072 /* ResultEnum.swift */; };
 		C3BD679F1FDCB1AC00C34072 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD679E1FDCB1AC00C34072 /* Business.swift */; };
 		C3BD67A11FDCB5F400C34072 /* BusinessCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67A01FDCB5F400C34072 /* BusinessCategory.swift */; };
 		C3BD67A31FDCB75C00C34072 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67A21FDCB75C00C34072 /* Address.swift */; };
@@ -25,6 +24,8 @@
 		C3BD67AA1FDCC55600C34072 /* MoyaStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67A91FDCC55600C34072 /* MoyaStringExtensions.swift */; };
 		C3BD67AC1FDCC94500C34072 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67AB1FDCC94500C34072 /* Network.swift */; };
 		C3BD67B21FDCD07B00C34072 /* BusinessTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67B11FDCD07B00C34072 /* BusinessTableViewController.swift */; };
+		C3BD67B51FDCE0E300C34072 /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67B41FDCE0E300C34072 /* BusinessTableViewCell.swift */; };
+		C3BD67B71FDCEB5A00C34072 /* UIAlertControllerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67B61FDCEB5A00C34072 /* UIAlertControllerError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +66,6 @@
 		C3BD67801FDCA51B00C34072 /* YelpSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YelpSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3BD67841FDCA51B00C34072 /* YelpSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpSearchUITests.swift; sourceTree = "<group>"; };
 		C3BD67861FDCA51B00C34072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3BD67971FDCAE2C00C34072 /* ResultEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEnum.swift; sourceTree = "<group>"; };
 		C3BD679E1FDCB1AC00C34072 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		C3BD67A01FDCB5F400C34072 /* BusinessCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCategory.swift; sourceTree = "<group>"; };
 		C3BD67A21FDCB75C00C34072 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -74,6 +74,8 @@
 		C3BD67A91FDCC55600C34072 /* MoyaStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaStringExtensions.swift; sourceTree = "<group>"; };
 		C3BD67AB1FDCC94500C34072 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		C3BD67B11FDCD07B00C34072 /* BusinessTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTableViewController.swift; sourceTree = "<group>"; };
+		C3BD67B41FDCE0E300C34072 /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
+		C3BD67B61FDCEB5A00C34072 /* UIAlertControllerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerError.swift; sourceTree = "<group>"; };
 		FEF951C7BEA068022064D87F /* Pods_YelpSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YelpSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,11 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				C3BD67641FDCA51B00C34072 /* AppDelegate.swift */,
+				C3BD67B31FDCE0C800C34072 /* Cells */,
 				C3BD67B01FDCD06B00C34072 /* ViewControllers */,
 				C3BD67A81FDCC53800C34072 /* Extensions */,
 				C3BD679D1FDCB15E00C34072 /* Models */,
-				C3BD679A1FDCB04B00C34072 /* Protocols */,
-				C3BD67991FDCAFCB00C34072 /* Enums */,
 				C3BD67921FDCAA2200C34072 /* Network */,
 				C3BD67681FDCA51B00C34072 /* Main.storyboard */,
 				C3BD676B1FDCA51B00C34072 /* Assets.xcassets */,
@@ -196,21 +197,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		C3BD67991FDCAFCB00C34072 /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				C3BD67971FDCAE2C00C34072 /* ResultEnum.swift */,
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
-		C3BD679A1FDCB04B00C34072 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		C3BD679D1FDCB15E00C34072 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				C3BD67A91FDCC55600C34072 /* MoyaStringExtensions.swift */,
+				C3BD67B61FDCEB5A00C34072 /* UIAlertControllerError.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -243,6 +230,14 @@
 				C3BD67B11FDCD07B00C34072 /* BusinessTableViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C3BD67B31FDCE0C800C34072 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C3BD67B41FDCE0E300C34072 /* BusinessTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,6 +468,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-YelpSearch/Pods-YelpSearch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -480,6 +477,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -553,7 +552,8 @@
 				C3BD67A11FDCB5F400C34072 /* BusinessCategory.swift in Sources */,
 				C3BD67B21FDCD07B00C34072 /* BusinessTableViewController.swift in Sources */,
 				C3BD67A31FDCB75C00C34072 /* Address.swift in Sources */,
-				C3BD67981FDCAE2C00C34072 /* ResultEnum.swift in Sources */,
+				C3BD67B51FDCE0E300C34072 /* BusinessTableViewCell.swift in Sources */,
+				C3BD67B71FDCEB5A00C34072 /* UIAlertControllerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

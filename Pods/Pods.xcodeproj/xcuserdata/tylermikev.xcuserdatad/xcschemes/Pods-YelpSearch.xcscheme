@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8ECBD7791816CA0E983AF12F5829D52D"
+               BlueprintIdentifier = "B60C2BA611954B106885B815EEA248F8"
                BuildableName = "Pods_YelpSearch.framework"
                BlueprintName = "Pods-YelpSearch"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8ECBD7791816CA0E983AF12F5829D52D"
+            BlueprintIdentifier = "B60C2BA611954B106885B815EEA248F8"
             BuildableName = "Pods_YelpSearch.framework"
             BlueprintName = "Pods-YelpSearch"
             ReferencedContainer = "container:Pods.xcodeproj">
