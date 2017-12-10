@@ -15,8 +15,14 @@ class BusinessTableViewController: UITableViewController {
     
     private var businesses = [Business]()
     private var lastRequest: Cancellable?
+    private var selectedIndex: IndexPath?
+    
     private let searchController = UISearchController(searchResultsController: nil)
 
+    enum Segue: String {
+        case detailSegue = "detailSegue"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +51,18 @@ class BusinessTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        
+        if identifier == Segue.detailSegue.rawValue {
+            guard let indexPath = selectedIndex else { return }
+            
+            let destinationViewController = segue.destination as! BusinessDetailViewController
+            destinationViewController.business = businesses[indexPath.row]
+            destinationViewController.transitioningDelegate = self
+        }
+    }
 
     //MARK: UITableViewDataSource Methods
     
@@ -69,6 +87,10 @@ class BusinessTableViewController: UITableViewController {
         return 240
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath
+        performSegue(withIdentifier: Segue.detailSegue.rawValue, sender: nil)
+    }
 }
 
 extension BusinessTableViewController: UISearchResultsUpdating {
@@ -137,6 +159,30 @@ extension BusinessTableViewController: UISearchResultsUpdating {
                                         
                                         
         })
+    }
+    
+}
+
+extension BusinessTableViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController,
+                             presenting: UIViewController,
+                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let indexPath = selectedIndex,
+            let cell = tableView.cellForRow(at: indexPath) else {
+                
+                return nil
+                
+        }
+        
+        let rect = tableView.rectForRow(at: indexPath)
+        let frame = tableView.convert(rect, to: view.superview)
+        let animator = BusinessDetailAnimationController(cellContentView: cell.contentView,
+                                                         initialFrame: frame)
+        
+        selectedIndex = nil
+        
+        return animator
     }
     
 }
