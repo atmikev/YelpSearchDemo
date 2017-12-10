@@ -29,6 +29,10 @@
 		C3BD67BE1FDDA1E000C34072 /* NoResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3BD67BD1FDDA1E000C34072 /* NoResultsView.xib */; };
 		C3BD67C21FDDA76700C34072 /* BusinessDetailAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67C11FDDA76700C34072 /* BusinessDetailAnimationController.swift */; };
 		C3BD67C41FDDAD8500C34072 /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67C31FDDAD8500C34072 /* BusinessDetailViewController.swift */; };
+		C3BD67C61FDDCE6300C34072 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67C51FDDCE6300C34072 /* Review.swift */; };
+		C3BD67C81FDDCE9D00C34072 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67C71FDDCE9D00C34072 /* User.swift */; };
+		C3BD67CA1FDDD05900C34072 /* BusinessReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67C91FDDD05900C34072 /* BusinessReview.swift */; };
+		C3BD67CC1FDDD69600C34072 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD67CB1FDDD69600C34072 /* ReviewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,10 @@
 		C3BD67BD1FDDA1E000C34072 /* NoResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoResultsView.xib; sourceTree = "<group>"; };
 		C3BD67C11FDDA76700C34072 /* BusinessDetailAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailAnimationController.swift; sourceTree = "<group>"; };
 		C3BD67C31FDDAD8500C34072 /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
+		C3BD67C51FDDCE6300C34072 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		C3BD67C71FDDCE9D00C34072 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C3BD67C91FDDD05900C34072 /* BusinessReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessReview.swift; sourceTree = "<group>"; };
+		C3BD67CB1FDDD69600C34072 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		FEF951C7BEA068022064D87F /* Pods_YelpSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YelpSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -211,6 +219,8 @@
 				C3BD679E1FDCB1AC00C34072 /* Business.swift */,
 				C3BD67A01FDCB5F400C34072 /* BusinessCategory.swift */,
 				C3BD67A21FDCB75C00C34072 /* Address.swift */,
+				C3BD67C51FDDCE6300C34072 /* Review.swift */,
+				C3BD67C71FDDCE9D00C34072 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -228,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				C3BD67A61FDCBF8200C34072 /* SearchBusinesses.swift */,
+				C3BD67C91FDDD05900C34072 /* BusinessReview.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -245,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				C3BD67B41FDCE0E300C34072 /* BusinessTableViewCell.swift */,
+				C3BD67CB1FDDD69600C34072 /* ReviewTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -577,9 +589,13 @@
 				C3BD67651FDCA51B00C34072 /* AppDelegate.swift in Sources */,
 				C3BD67C21FDDA76700C34072 /* BusinessDetailAnimationController.swift in Sources */,
 				C3BD679F1FDCB1AC00C34072 /* Business.swift in Sources */,
+				C3BD67C81FDDCE9D00C34072 /* User.swift in Sources */,
 				C3BD67A11FDCB5F400C34072 /* BusinessCategory.swift in Sources */,
+				C3BD67C61FDDCE6300C34072 /* Review.swift in Sources */,
 				C3BD67B21FDCD07B00C34072 /* BusinessTableViewController.swift in Sources */,
 				C3BD67A31FDCB75C00C34072 /* Address.swift in Sources */,
+				C3BD67CA1FDDD05900C34072 /* BusinessReview.swift in Sources */,
+				C3BD67CC1FDDD69600C34072 /* ReviewTableViewCell.swift in Sources */,
 				C3BD67B51FDCE0E300C34072 /* BusinessTableViewCell.swift in Sources */,
 				C3BD67B71FDCEB5A00C34072 /* UIAlertControllerError.swift in Sources */,
 			);

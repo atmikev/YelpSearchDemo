@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import MBProgressHUD
 
 class BusinessDetailViewController: UIViewController {
 
@@ -15,11 +16,15 @@ class BusinessDetailViewController: UIViewController {
     @IBOutlet weak var businessNameLabel: UILabel!
     @IBOutlet weak var businessRatingLabel: UILabel!
     @IBOutlet weak var businessPriceLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     public var business: Business!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         
         show(business)
         
@@ -47,8 +52,8 @@ class BusinessDetailViewController: UIViewController {
     private func show(_ business: Business) {
         
         businessNameLabel.text = business.name
-        businessRatingLabel.text = String(repeating:"\u{2B50}", count: business.rating)
-        businessPriceLabel.text = String(repeating:"\u{1F4B0}", count: business.price.count)
+        businessRatingLabel.text = business.ratingString
+        businessPriceLabel.text = business.priceString
         
         businessImageView.image = nil
         guard let url = URL(string: business.imageURL) else { return }
@@ -59,5 +64,81 @@ class BusinessDetailViewController: UIViewController {
                                       progressBlock: nil,
                                       completionHandler:nil)
         
+        let hud = MBProgressHUD(view: view)
+        hud.removeFromSuperViewOnHide = true
+        hud.isUserInteractionEnabled = false
+        hud.label.text = "Retrieving Reviews"
+        DispatchQueue.main.async {
+            self.view.addSubview(hud)
+            hud.show(animated: true)
+        }
+        
+        func failed() {
+            UIAlertController.showError(with: "Error",
+                                        andMessage: "We were unable to retrieve any reviews. Please try again.",
+                                        on: self)
+        }
+        
+        if business.reviews.count == 0 {
+            let request = BusinessReviewRequest(business: business)
+            _ = Network.request(target: .getBusinessReviews(request: request),
+                            success: { (json) in
+                                DispatchQueue.main.async { hud.hide(animated: true) }
+                                let response = BusinessReviewResponse(from: json)
+                                self.business.reviews = response.reviews
+                                self.reloadTable()
+            },
+                            error: { (error) in
+                                DispatchQueue.main.async { hud.hide(animated: true) }
+                                failed()
+            },
+                            failure: { (moyaError) in
+                                DispatchQueue.main.async { hud.hide(animated: true) }
+                                failed()
+            })
+            
+        } else {
+            reloadTable()
+        }
+        
     }
+    
+    private func reloadTable() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+}
+
+extension BusinessDetailViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return business.reviews.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ReviewTableViewCell.self)) as! ReviewTableViewCell
+        
+        cell.review = business.reviews[indexPath.row]
+        
+        return cell
+    }
+    
+}
+
+extension BusinessDetailViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
 }

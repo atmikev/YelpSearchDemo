@@ -13,8 +13,8 @@ class BusinessTableViewCell: UITableViewCell {
 
     @IBOutlet weak var businessImageView: UIImageView!
     @IBOutlet weak var businessNameLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var businessRatingLabel: UILabel!
+    @IBOutlet weak var businessPriceLabel: UILabel!
     
     public var business: Business! {
         didSet {
@@ -24,8 +24,8 @@ class BusinessTableViewCell: UITableViewCell {
     
     private func show(_ business: Business) {
         businessNameLabel.text = business.name
-        ratingLabel.text = String(repeating:"\u{2B50}", count: business.rating)
-        priceLabel.text = String(repeating:"\u{1F4B0}", count: business.price.count)
+        businessRatingLabel.text = business.ratingString
+        businessPriceLabel.text = business.priceString
         
         businessImageView.image = nil
         guard let url = URL(string: business.imageURL) else { return }

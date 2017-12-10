@@ -25,6 +25,15 @@ struct Business {
     let location: Address
     let distance: Float
     let transactions: [String]
+    var reviews = [Review]()
+    
+    var ratingString: String {
+        return String(repeating:"\u{2B50}", count: rating)
+    }
+    
+    var priceString: String {
+        return String(repeating:"\u{1F4B0}", count: price.count)
+    }
     
     init(from json: JSON) {
         rating = json["rating"].intValue
