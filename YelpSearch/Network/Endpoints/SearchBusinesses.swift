@@ -41,7 +41,7 @@ struct SearchBusinessesResponse {
     
     init(from json:JSON) {
         total = json["total"].intValue
-        businesses = json["businesses"].arrayValue.map { Business(from: $0) }
+        businesses = json["businesses"].arrayValue.map { Business(from: $0) }.sorted {$0.rating > $1.rating}
         
         let latitude = json["region"]["center"]["latitude"].floatValue
         let longitude = json["region"]["center"]["longitude"].floatValue

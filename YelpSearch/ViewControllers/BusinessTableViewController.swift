@@ -21,8 +21,15 @@ class BusinessTableViewController: UITableViewController {
         super.viewDidLoad()
         
         setup(searchController)
+        setup(tableView)
         
         navigationItem.hidesSearchBarWhenScrolling = false
+        
+    }
+    
+    private func setup(_ tableView: UITableView) {
+        let noResultsView = Bundle.main.loadNibNamed("NoResultsView", owner: nil, options: nil)?.first as? UIView
+        tableView.backgroundView = noResultsView
     }
     
     private func setup(_ searchController: UISearchController) {
@@ -80,7 +87,7 @@ extension BusinessTableViewController: UISearchResultsUpdating {
             return
         }
         
-        let request = SearchBusinessesRequest(at: CLLocationCoordinate2DMake(41.881832, -87.623177),
+        let request = SearchBusinessesRequest(at: CLLocationCoordinate2DMake(41.892179, -87.636655),
                                               with: searchText)
         let hud = MBProgressHUD(view: view)
         hud.removeFromSuperViewOnHide = true
